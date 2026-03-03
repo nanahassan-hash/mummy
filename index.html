@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إلى أغلى أم في الدنيا ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, sans-serif;
+direction:rtl;
+text-align:center;
+background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+overflow-x:hidden;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+background:rgba(255,255,255,0.95);
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+margin:40px 15px;
+}
+
+h1{
+color:#e91e63;
+margin-bottom:15px;
+}
+
+img{
+width:100%;
+max-width:280px;
+border-radius:20px;
+margin:15px 0;
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+button{
+background:linear-gradient(45deg,#e91e63,#ff4081);
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+margin-top:15px;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+#message{
+margin-top:15px;
+font-size:18px;
+display:none;
+animation:fade 1.5s ease forwards;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+.heart{
+position:fixed;
+bottom:-10px;
+animation:float linear forwards;
+}
+
+@keyframes float{
+to{
+transform:translateY(-110vh);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>🌸 عيد أم سعيد يا ماما 🌸</h1>
+<p>أنتِ أجمل نعمة في حياتي ❤️</p>
+
+<img src="photo.jpg" alt="صورتنا">
+
+<br>
+<button onclick="showMessage()">اضغطي هنا يا أمي 💖</button>
+
+<div id="message">
+ربنا يخليكي ليا ويديكي الصحة والعافية دايمًا ❤️  
+أنا بحبك أكتر من أي حاجة في الدنيا 💕
+</div>
+</div>
+
+<audio id="music" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function showMessage(){
+document.getElementById("message").style.display="block";
+document.getElementById("music").play();
+}
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+15)+"px";
+heart.style.animationDuration=(Math.random()*3+4)+"s";
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove();},6000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
